@@ -1,4 +1,4 @@
-const GIST_URL = 'studentData.json'; // Local JSON file
+const GIST_URL = 'studentData.json';
 
 let studentData;
 
@@ -16,22 +16,25 @@ fetch(GIST_URL)
             .htmlLat('latitude')
             .htmlLng('longitude')
             .htmlElement(d => {
-                const button = document.createElement('button');
-                button.textContent = `${d.city} (${d.studentCount} TTU Students)`;
-                button.style.color = d.studentCount > 0 ? 'red' : 'orange';
-                button.style.fontSize = '16px';
-                button.style.background = 'rgba(0, 0, 0, 0.7)';
-                button.style.padding = '8px 12px';
-                button.style.borderRadius = '5px';
-                button.style.border = 'none';
-                button.style.cursor = 'pointer';
-                button.style.whiteSpace = 'nowrap';
-
-                button.addEventListener('click', () => {
-                    localStorage.setItem('cityName', d.city);
-                    window.location.href = 'details.html';
-                });
-
-                return button;
+                const el = document.createElement('div');
+                el.textContent = `${d.city} (${d.studentCount} TTU Students)`;
+                el.style.color = d.studentCount > 0 ? 'red' : 'orange';
+                el.style.fontSize = '16px';
+                el.style.background = 'rgba(0, 0, 0, 0.7)';
+                el.style.padding = '8px 12px';
+                el.style.borderRadius = '5px';
+                el.style.whiteSpace = 'nowrap';
+                return el;
             });
+
+        const sidebar = document.getElementById('sidebar');
+        studentData.forEach(city => {
+            const button = document.createElement('button');
+            button.textContent = `${city.city} (${city.studentCount} TTU Students)`;
+            button.addEventListener('click', () => {
+                localStorage.setItem('cityName', city.city);
+                window.location.href = 'details.html';
+            });
+            sidebar.appendChild(button);
+        });
     });
