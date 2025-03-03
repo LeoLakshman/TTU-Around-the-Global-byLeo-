@@ -27,8 +27,7 @@ fetch(GIST_URL)
                 button.style.whiteSpace = 'nowrap';
 
                 button.addEventListener('click', () => {
-                    const cityStudents = studentData.filter(student => student.city === d.city);
-                    localStorage.setItem('cityStudents', JSON.stringify(cityStudents));
+                    localStorage.setItem('cityName', d.city); // Store city name
                     window.location.href = 'details.html';
                 });
 
