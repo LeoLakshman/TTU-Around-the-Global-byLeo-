@@ -3,10 +3,17 @@
 <head>
     <title>TTU Students Around Globe (by_Leo)</title>
     <style>
-        body { margin: 0; overflow: hidden; }
+        body { margin: 0; display: flex; }
         #globeViz {
-            width: 100vw;
+            width: 70vw;
             height: 100vh;
+        }
+        #sidebar {
+            width: 30vw;
+            height: 100vh;
+            overflow-y: auto;
+            padding: 20px;
+            background: #f0f0f0;
         }
         #studentDetails {
             position: absolute;
@@ -19,18 +26,22 @@
             display: none;
             max-width: 300px;
         }
-
-        /* Add this to override any conflicting styles */
         button {
-          all: unset;
-          cursor: pointer;
-          white-space: nowrap;
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 5px;
+            border: none;
+            background: #e0e0e0;
+            cursor: pointer;
+            text-align: left;
         }
     </style>
     <script src="//unpkg.com/globe.gl"></script>
 </head>
 <body>
     <div id="globeViz"></div>
+    <div id="sidebar"></div>
     <div id="studentDetails"></div>
 
     <script src="script.js"></script>
