@@ -28,8 +28,8 @@ To run this project locally, follow these steps:
 
 1.  **Clone the repository (if applicable):**
     ```bash
-    git clone 
-    cd [repository directory]
+    git clone https://github.com/LeoLakshman/TTU-Around-the-Global-byLeo-.git
+    cd https://github.com/LeoLakshman/TTU-Around-the-Global-byLeo-.git
     ```
 2.  **Create `index.html`, `details.html`, `script.js`, and `details.js` files:**
     * Copy the contents of the provided files into your local files.
