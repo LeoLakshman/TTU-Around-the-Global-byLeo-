@@ -1,25 +1,38 @@
-<style>
-    body { margin: 0; overflow: hidden; }
-    #globeViz {
-        width: 100vw;
-        height: 100vh;
-    }
-    #studentDetails {
-        position: absolute;
-        top: 20px;
-        left: 20px;
-        background: rgba(255, 255, 255, 0.9);
-        padding: 20px;
-        border-radius: 5px;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-        display: none;
-        max-width: 300px;
-    }
+<!DOCTYPE html>
+<html>
+<head>
+    <title>TTU Students Around Globe (by_Leo)</title>
+    <style>
+        body { margin: 0; overflow: hidden; }
+        #globeViz {
+            width: 100vw;
+            height: 100vh;
+        }
+        #studentDetails {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+            display: none;
+            max-width: 300px;
+        }
 
-    /* Add this to override any conflicting styles */
-    button {
-      all: unset;
-      cursor: pointer;
-      white-space: nowrap;
-    }
-</style>
+        /* Add this to override any conflicting styles */
+        button {
+          all: unset;
+          cursor: pointer;
+          white-space: nowrap;
+        }
+    </style>
+    <script src="//unpkg.com/globe.gl"></script>
+</head>
+<body>
+    <div id="globeViz"></div>
+    <div id="studentDetails"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
