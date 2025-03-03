@@ -1,4 +1,4 @@
-const GIST_URL = 'https://gist.githubusercontent.com/LeoLakshman/2da0383115823f0c3f0395678899d666/raw/d771fb4249a66078a2ea00eda39d3809d2a231c0/studentData.json';
+const GIST_URL = 'studentData.json'; // Local JSON file
 
 let studentData;
 
@@ -6,6 +6,7 @@ fetch(GIST_URL)
     .then(res => res.json())
     .then(data => {
         studentData = data;
+        localStorage.setItem('studentData', JSON.stringify(studentData));
         console.log("Student Data Loaded:", studentData);
 
         new Globe(document.getElementById('globeViz'))
@@ -27,7 +28,7 @@ fetch(GIST_URL)
                 button.style.whiteSpace = 'nowrap';
 
                 button.addEventListener('click', () => {
-                    localStorage.setItem('cityName', d.city); // Store city name
+                    localStorage.setItem('cityName', d.city);
                     window.location.href = 'details.html';
                 });
 
