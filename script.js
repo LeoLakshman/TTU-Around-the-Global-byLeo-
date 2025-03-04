@@ -1,4 +1,4 @@
-const GIST_URL = 'studentData.json';
+const GIST_URL = 'PhD_Applications.json';
 
 let studentData;
 
